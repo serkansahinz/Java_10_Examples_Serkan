@@ -45,4 +45,23 @@ public class Personel {
 	public void setBaseLeave(int baseLeave) {
 		this.baseLeave = baseLeave;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Personel [name=");
+		builder.append(name);
+		builder.append(", iD=");
+		builder.append(iD);
+		builder.append(", baseSalary=");
+		builder.append(baseSalary);
+		builder.append(", startDate=");
+		builder.append(startDate);
+		builder.append(", departman=");
+		builder.append(departman);
+		builder.append(", baseLeave=");
+		builder.append(baseLeave);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 }
