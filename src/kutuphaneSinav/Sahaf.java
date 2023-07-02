@@ -30,6 +30,7 @@ public class Sahaf implements ISahaf{
 		Musteri musteri8 = new Musteri("Osman Bas", 8);
 		Musteri musteri9 = new Musteri("Onur Bas", 9);
 		Musteri musteri10 = new Musteri("Ahmet Akkoyun", 10);
+		
 		spesyelListe(musteriler, musteri1);
 		spesyelListe(musteriler, musteri2);
 		spesyelListe(musteriler, musteri3);
@@ -40,6 +41,7 @@ public class Sahaf implements ISahaf{
 		spesyelListe(musteriler, musteri8);
 		spesyelListe(musteriler, musteri9);
 		spesyelListe(musteriler, musteri10);
+		
 	}
 	
 	public void KasiyerOlustur() {
@@ -163,7 +165,12 @@ public class Sahaf implements ISahaf{
 		}
 		return musteri;
 	} public List<Musteri> kitapAdinaGoreKiralayanlar(String kitapAd){
-		List<Musteri> musteriList = kiralamalar.stream().filter(x-> x.getKitap().getIsim().equalsIgnoreCase(kitapAd)).map(x->x.getMusteri()).collect(Collectors.toList());
+		List<Musteri> musteriList = 
+				kiralamalar.
+				stream().
+				filter(x-> x.getKitap().getIsim().equalsIgnoreCase(kitapAd)).
+				map(x->x.getMusteri()).
+				collect(Collectors.toList());
 		return musteriList;
 	} public List<Musteri> ahmLiMusteriler(){
 		List<Musteri> ahMusteris= musteriler.stream().filter(x->x.getIsimVeSoyisim().startsWith("Ahm")).collect(Collectors.toList());
